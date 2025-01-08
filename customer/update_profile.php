@@ -7,6 +7,14 @@ $current_password = trim($_POST['current_password']);
 $new_password = trim($_POST['new_password']);
 $confirm_password = trim($_POST['confirm_password']); 
 
+// Pseudocode:
+// 1. Function changePassword(username, oldPassword, newPassword):
+//    a. Get user record from database by username
+//    b. If user not found, return "User not found"
+//    c. Verify old password
+//    d. If old password is correct, update password to newPassword
+//    e. If old password is incorrect, return "Invalid old password"
+
 // Ensure new password matches confirmation
 if ($new_password !== $confirm_password) {
     echo "<script>alert('Password baru tidak cocok!'); window.location.href = 'profil.php';</script>";
